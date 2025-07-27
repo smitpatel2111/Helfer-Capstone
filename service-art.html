@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Therapy | Helfer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Modern fade-in for images and cards */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+        animation: fadeInUp 1s cubic-bezier(.45,.05,.55,.95) forwards;
+    }
+    .fade-in.delayed { animation-delay: 0.4s; }
+    .fade-in2 { opacity: 0; animation: fadeIn 1.2s .7s ease forwards;}
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px) scale(0.95);}
+        to   { opacity: 1; transform: translateY(0) scale(1);}
+    }
+    @keyframes fadeIn {
+        from { opacity: 0;}
+        to   { opacity: 1;}
+    }
+    .art-animation {
+        margin: 2em 0 1.5em 0;
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .art-pic-card {
+        background: var(--secondary-alt, #e0f2fe);
+        border-radius: 18px;
+        box-shadow: 0 2px 16px rgba(6,182,212,0.11);
+        overflow: hidden;
+        width: 220px;
+        max-width: 95vw;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform .18s, box-shadow .18s;
+        cursor: pointer;
+        will-change: transform;
+        position: relative;
+    }
+    .art-pic-card:hover {
+        transform: scale(1.05) rotate(-2deg);
+        box-shadow: 0 8px 32px rgba(6,182,212,0.18);
+    }
+    .art-pic-img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        transition: filter .18s;
+    }
+    .art-pic-card:hover .art-pic-img {
+        filter: brightness(1.07) saturate(1.17);
+    }
+    .art-pic-desc {
+        padding: 1em 1.1em 1em 1.1em;
+        font-size: 1em;
+        color: var(--gray, #64748b);
+        text-align: center;
+    }
+    /* Medium image styling */
+    .detail-img {
+        display: block;
+        margin: 0 auto 1.2em auto;
+        width: 380px;
+        max-width: 94vw;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 14px;
+        box-shadow: 0 2px 10px rgba(30,41,59,0.07);
+    }
+    @media (max-width: 600px) {
+        .art-animation { gap: 1em; }
+        .art-pic-card { width: 98vw; }
+        .art-pic-img { height: 110px; }
+        .detail-img {
+            width: 98vw;
+            height: 120px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="service-detail-page fade-in">
+            <a href="index.html#services" class="back-link">&larr; Back to Services</a>
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" class="detail-img fade-in2" alt="Art Therapy">
+            <h1>Art Therapy</h1>
+            <div class="desc fade-in delayed">
+                <strong>Express yourself and heal through creativity!</strong><br>
+                Art therapy combines mental health support with the healing power of artistic expression—no experience required.
+            </div>
+
+            <!-- Animated Art Content Cards -->
+            <div class="art-animation">
+                <div class="art-pic-card fade-in" style="animation-delay:.25s">
+                    <img class="art-pic-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Watercolor Art">
+                    <div class="art-pic-desc">Watercolor painting for calming the mind & emotional flow</div>
+                </div>
+                <div class="art-pic-card fade-in" style="animation-delay:.4s">
+                    <img class="art-pic-img" src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Creative Drawing">
+                    <div class="art-pic-desc">Creative drawing sessions to unlock self-expression</div>
+                </div>
+                <div class="art-pic-card fade-in" style="animation-delay:.55s">
+                    <img class="art-pic-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Art Collage">
+                    <div class="art-pic-desc">Art collage: piecing together your story visually</div>
+                </div>
+            </div>
+
+            <ul class="fade-in delayed" style="animation-delay:.8s">
+                <li>Drawing, painting, and mixed media</li>
+                <li>Emotional expression and exploration</li>
+                <li>Boost self-confidence and self-discovery</li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary fade-in delayed" style="animation-delay:1s">Book Now</a>
+        </div>
+    </main>
+    <script>
+    // Add .fade-in JS fallback for browsers or for scroll-trigger (optional)
+    document.addEventListener('DOMContentLoaded', function () {
+        function onScrollFadeIn() {
+            document.querySelectorAll('.fade-in').forEach(function(el) {
+                if(el.classList.contains('in-view')) return;
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 60) el.classList.add('in-view');
+            });
+        }
+        onScrollFadeIn();
+        window.addEventListener('scroll', onScrollFadeIn, { passive: true });
+        window.addEventListener('resize', onScrollFadeIn);
+    });
+    </script>
+</body>
+</html>

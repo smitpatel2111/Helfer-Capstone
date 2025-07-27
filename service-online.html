@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Counseling | Helfer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    .fade-in {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+        animation: fadeInUp 1s cubic-bezier(.45,.05,.55,.95) forwards;
+    }
+    .fade-in.delayed { animation-delay: 0.4s; }
+    .fade-in2 { opacity: 0; animation: fadeIn 1.2s .7s ease forwards;}
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px) scale(0.96);}
+        to   { opacity: 1; transform: translateY(0) scale(1);}
+    }
+    @keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
+    .online-mini-cards {
+        display: flex;
+        gap: 1.1em;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1.5em 0 1.5em 0;
+    }
+    .online-mini-card {
+        background: var(--secondary-alt, #e0f2fe);
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(6,182,212,0.09);
+        overflow: hidden;
+        width: 135px;
+        flex-shrink: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform .14s, box-shadow .14s;
+        cursor: pointer;
+        will-change: transform;
+        position: relative;
+    }
+    .online-mini-card:hover {
+        transform: scale(1.07) rotate(-2deg);
+        box-shadow: 0 6px 22px rgba(6,182,212,0.14);
+        background: var(--white, #fff);
+    }
+    .online-mini-img {
+        width: 100%;
+        height: 70px;
+        object-fit: cover;
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+        transition: filter .14s;
+    }
+    .online-mini-card:hover .online-mini-img {
+        filter: brightness(1.09) saturate(1.2);
+    }
+    .online-mini-desc {
+        padding: 0.7em 0.7em 0.7em 0.7em;
+        font-size: 0.97em;
+        color: var(--gray, #64748b);
+        text-align: center;
+        min-height: 58px;
+    }
+    /* Medium image styling */
+    .detail-img {
+        display: block;
+        margin: 0 auto 1.2em auto;
+        width: 380px;
+        max-width: 94vw;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 14px;
+        box-shadow: 0 2px 10px rgba(30,41,59,0.07);
+    }
+    @media (max-width: 600px) {
+        .online-mini-cards { gap: 0.5em; }
+        .online-mini-card { width: 99vw; }
+        .online-mini-img { height: 58px; }
+        .detail-img {
+            width: 98vw;
+            height: 120px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="service-detail-page fade-in">
+            <a href="index.html#services" class="back-link">&larr; Back to Services</a>
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" class="detail-img fade-in2" alt="Online Counseling">
+            <h1>Online Counseling</h1>
+            <div class="desc fade-in delayed">
+                <strong>Care Wherever You Are</strong><br>
+                Access professional mental health support from the comfort and privacy of your home. Secure, confidential, and flexible sessions via video or phone—your wellbeing, your way.
+            </div>
+
+            <!-- Mini Cards Section (Small animated pics & content) -->
+            <div class="online-mini-cards">
+                <div class="online-mini-card fade-in" style="animation-delay:.22s">
+                    <img class="online-mini-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=270&q=80" alt="Any Device">
+                    <div class="online-mini-desc">
+                        <strong>Any Device</strong><br>
+                        Connect by phone, tablet, or computer.
+                    </div>
+                </div>
+                <div class="online-mini-card fade-in" style="animation-delay:.29s">
+                    <img class="online-mini-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=270&q=80" alt="Flexible Scheduling">
+                    <div class="online-mini-desc">
+                        <strong>Flexible Scheduling</strong><br>
+                        Day, evening, and weekend appointments.
+                    </div>
+                </div>
+                <div class="online-mini-card fade-in" style="animation-delay:.36s">
+                    <img class="online-mini-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=270&q=80" alt="Confidential">
+                    <div class="online-mini-desc">
+                        <strong>Confidential</strong><br>
+                        Secure, private, and encrypted sessions.
+                    </div>
+                </div>
+                <div class="online-mini-card fade-in" style="animation-delay:.43s">
+                    <img class="online-mini-img" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=270&q=80" alt="Global Access">
+                    <div class="online-mini-desc">
+                        <strong>Global Access</strong><br>
+                        Get help wherever you live or travel.
+                    </div>
+                </div>
+                <div class="online-mini-card fade-in" style="animation-delay:.50s">
+                    <img class="online-mini-img" src="https://images.unsplash.com/photo-1465101178521-c1a9136a3a14?auto=format&fit=crop&w=270&q=80" alt="Text & Chat Options">
+                    <div class="online-mini-desc">
+                        <strong>Text & Chat Options</strong><br>
+                        Choose video, phone, or instant messaging.
+                    </div>
+                </div>
+                <div class="online-mini-card fade-in" style="animation-delay:.57s">
+                    <img class="online-mini-img" src="https://images.unsplash.com/photo-1464375113710-371b478add1b?auto=format&fit=crop&w=270&q=80" alt="Expert Care">
+                    <div class="online-mini-desc">
+                        <strong>Expert Care</strong><br>
+                        Licensed counselors, all online.
+                    </div>
+                </div>
+            </div>
+
+            <ul class="fade-in delayed" style="animation-delay:.7s">
+                <li>Flexible scheduling</li>
+                <li>Secure video platform</li>
+                <li>Same expert care as in-person</li>
+                <li>Confidential and private sessions</li>
+                <li>Support for individuals, couples, and families</li>
+                <li>Text and chat options available</li>
+            </ul>
+            <div style="margin:2em 0;" class="fade-in delayed" style="animation-delay:.9s">
+                <blockquote style="font-style:italic;color:var(--primary-dark);border-left:4px solid var(--primary);padding:0.6em 1em;background:#f3f4f6;border-radius:7px;">
+                    “Online counseling let me access the help I needed, right from my living room.”
+                </blockquote>
+                <div style="text-align:right;font-size:0.97em;color:#888;">— Online Counseling Client</div>
+            </div>
+            <a href="index.html#contact" class="btn-primary fade-in delayed" style="animation-delay:1s">Book Now</a>
+        </div>
+    </main>
+    <script>
+    // Animate .fade-in when scrolled into view
+    document.addEventListener('DOMContentLoaded', function () {
+        function onScrollFadeIn() {
+            document.querySelectorAll('.fade-in').forEach(function(el) {
+                if(el.classList.contains('in-view')) return;
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 60) el.classList.add('in-view');
+            });
+        }
+        onScrollFadeIn();
+        window.addEventListener('scroll', onScrollFadeIn, { passive: true });
+        window.addEventListener('resize', onScrollFadeIn);
+    });
+    </script>
+</body>
+</html>

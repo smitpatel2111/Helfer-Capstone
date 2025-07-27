@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Therapy | YourBrand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px) scale(0.96);
+      animation: fadeInUp 1s cubic-bezier(.45,.05,.55,.95) forwards;
+    }
+    .fade-in.delayed { animation-delay: 0.4s; }
+    .fade-in2 { opacity: 0; animation: fadeIn 1.2s .7s ease forwards;}
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px) scale(0.96);}
+      to   { opacity: 1; transform: translateY(0) scale(1);}
+    }
+    @keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
+
+    .family-mini-cards {
+      display: flex;
+      gap: 1.1em;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1.5em 0 1.5em 0;
+    }
+    .family-mini-card {
+      background: var(--secondary-alt, #e0f2fe);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(6,182,212,0.09);
+      overflow: hidden;
+      width: 135px;
+      flex-shrink: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform .14s, box-shadow .14s;
+      cursor: pointer;
+      will-change: transform;
+      position: relative;
+    }
+    .family-mini-card:hover {
+      transform: scale(1.07) rotate(-2deg);
+      box-shadow: 0 6px 22px rgba(6,182,212,0.14);
+      background: var(--white, #fff);
+    }
+    .family-mini-img {
+      width: 100%;
+      height: 70px;
+      object-fit: cover;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+      transition: filter .14s;
+    }
+    .family-mini-card:hover .family-mini-img {
+      filter: brightness(1.09) saturate(1.2);
+    }
+    .family-mini-desc {
+      padding: 0.7em 0.7em 0.7em 0.7em;
+      font-size: 0.97em;
+      color: var(--gray, #64748b);
+      text-align: center;
+      min-height: 58px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .family-mini-cards { gap: 0.5em; }
+      .family-mini-card { width: 99vw; }
+      .family-mini-img { height: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="service-detail-page fade-in">
+      <a href="index.html#services" class="back-link">&larr; Back to Services</a>
+      <h1>Family Therapy</h1>
+      <div class="desc fade-in delayed">
+        <strong>Heal, Communicate, and Grow Together</strong><br>
+        Our Family Therapy sessions are designed to improve communication, resolve conflicts, and nurture healthy relationships. We provide a safe, neutral space for all family members to express themselves and work towards common goals with the help of an experienced therapist.
+      </div>
+
+      <!-- Mini Cards Section (Small animated pics & content) -->
+      <div class="family-mini-cards">
+        <div class="family-mini-card fade-in" style="animation-delay:.22s">
+          <img class="family-mini-img" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=270&q=80" alt="Family Communication">
+          <div class="family-mini-desc">
+            <strong>Communication</strong><br>
+            Learn to listen & express feelings safely.
+          </div>
+        </div>
+        <div class="family-mini-card fade-in" style="animation-delay:.29s">
+          <img class="family-mini-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=270&q=80" alt="Family Bonding">
+          <div class="family-mini-desc">
+            <strong>Bonding Activities</strong><br>
+            Build trust through fun, shared experiences.
+          </div>
+        </div>
+        <div class="family-mini-card fade-in" style="animation-delay:.36s">
+          <img class="family-mini-img" src="https://images.unsplash.com/photo-1470848051974-964b789cb6fa?auto=format&fit=crop&w=270&q=80" alt="Conflict Resolution">
+          <div class="family-mini-desc">
+            <strong>Conflict Resolution</strong><br>
+            Learn skills to manage and resolve disputes.
+          </div>
+        </div>
+        <div class="family-mini-card fade-in" style="animation-delay:.43s">
+          <img class="family-mini-img" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=270&q=80" alt="Parent-Child Guidance">
+          <div class="family-mini-desc">
+            <strong>Parent-Child Guidance</strong><br>
+            Support for all ages and family types.
+          </div>
+        </div>
+        <div class="family-mini-card fade-in" style="animation-delay:.5s">
+          <img class="family-mini-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=270&q=80" alt="Blended Families">
+          <div class="family-mini-desc">
+            <strong>Blended Families</strong><br>
+            Navigate transitions and new beginnings.
+          </div>
+        </div>
+        <div class="family-mini-card fade-in" style="animation-delay:.57s">
+          <img class="family-mini-img" src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=270&q=80" alt="Goal Setting">
+          <div class="family-mini-desc">
+            <strong>Goal Setting</strong><br>
+            Create achievable, family-centered goals.
+          </div>
+        </div>
+      </div>
+
+      <ul class="fade-in delayed" style="animation-delay:.7s">
+        <li>Conflict resolution strategies</li>
+        <li>Support for blended and non-traditional families</li>
+        <li>Parent-child and sibling relationship guidance</li>
+        <li>Improved communication techniques</li>
+        <li>Family goal setting and planning</li>
+        <li>Personalized family wellness plans</li>
+        <li>Fun activities to strengthen relationships</li>
+      </ul>
+      <div style="margin:2em 0;" class="fade-in delayed" style="animation-delay:.9s">
+        <blockquote style="font-style:italic;color:var(--primary-dark);border-left:4px solid var(--primary);padding:0.6em 1em;background:#f3f4f6;border-radius:7px;">
+          “We found new ways to talk and understand each other, thanks to our family therapist.”
+        </blockquote>
+        <div style="text-align:right;font-size:0.97em;color:#888;">— Family Therapy Client</div>
+      </div>
+      <a href="index.html#contact" class="btn-primary fade-in delayed" style="animation-delay:1s">Book Family Therapy</a>
+    </section>
+  </main>
+  <script>
+    // Animate .fade-in when scrolled into view
+    document.addEventListener('DOMContentLoaded', function () {
+      function onScrollFadeIn() {
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+          if(el.classList.contains('in-view')) return;
+          const rect = el.getBoundingClientRect();
+          if(rect.top < window.innerHeight - 60) el.classList.add('in-view');
+        });
+      }
+      onScrollFadeIn();
+      window.addEventListener('scroll', onScrollFadeIn, { passive: true });
+      window.addEventListener('resize', onScrollFadeIn);
+    });
+  </script>
+</body>
+</html>

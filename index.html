@@ -34,26 +34,66 @@
         <section id="services" class="section services-section">
             <h2>Our Services</h2>
             <div class="service-grid">
-                <div class="service-card">
-                    <span class="icon">🧑‍⚕️</span>
-                    <h3>Individual Counseling</h3>
-                    <p>Personal sessions tailored to your unique needs and goals.</p>
-                </div>
-                <div class="service-card">
-                    <span class="icon">👨‍👩‍👧‍👦</span>
-                    <h3>Family Therapy</h3>
-                    <p>Guided support for healthy family relationships and communication.</p>
-                </div>
-                <div class="service-card">
-                    <span class="icon">🧘‍♂️</span>
-                    <h3>Stress Management</h3>
-                    <p>Tools and techniques to calm the mind and restore balance.</p>
-                </div>
-                <div class="service-card">
-                    <span class="icon">💡</span>
-                    <h3>Career Guidance</h3>
-                    <p>Find clarity and confidence in your educational and career path.</p>
-                </div>
+                <a href="service-individual.html" class="service-card-link">
+                    <div class="service-card">
+                        <span class="icon">🧑‍⚕️</span>
+                        <h3>Individual Counseling</h3>
+                        <p>Personal sessions tailored to your unique needs and goals.</p>
+                    </div>
+                </a>
+                <a href="service-family.html" class="service-card-link">
+                    <div class="service-card">
+                        <span class="icon">👨‍👩‍👧‍👦</span>
+                        <h3>Family Therapy</h3>
+                        <p>Guided support for healthy family relationships and communication.</p>
+                    </div>
+                </a>
+                <a href="service-stress.html" class="service-card-link">
+                    <div class="service-card">
+                        <span class="icon">🧘‍♂️</span>
+                        <h3>Stress Management</h3>
+                        <p>Tools and techniques to calm the mind and restore balance.</p>
+                    </div>
+                </a>
+                <a href="service-career.html" class="service-card-link">
+                    <div class="service-card">
+                        <span class="icon">💡</span>
+                        <h3>Career Guidance</h3>
+                        <p>Find clarity and confidence in your educational and career path.</p>
+                    </div>
+                </a>
+                <!-- Extra Services Start -->
+                <a href="service-sleep.html" class="service-card-link">
+                    <div class="service-card premium">
+                        <span class="icon">🌙</span>
+                        <h3>Sleep Therapy</h3>
+                        <p>Overcome insomnia and improve sleep quality with proven techniques.</p>
+                        <span class="badge">Premium</span>
+                    </div>
+                </a>
+                <a href="service-group.html" class="service-card-link">
+                    <div class="service-card">
+                        <span class="icon">🧑‍🤝‍🧑</span>
+                        <h3>Group Workshops</h3>
+                        <p>Participate in group sessions to build resilience and share experiences.</p>
+                    </div>
+                </a>
+                <a href="service-online.html" class="service-card-link">
+                    <div class="service-card featured">
+                        <span class="icon">🖥️</span>
+                        <h3>Online Counseling</h3>
+                        <p>Professional mental health support from the comfort of your home.</p>
+                        <span class="badge badge-featured">Featured</span>
+                    </div>
+                </a>
+                <a href="service-art.html" class="service-card-link">
+                    <div class="service-card">
+                        <span class="icon">🎨</span>
+                        <h3>Art Therapy</h3>
+                        <p>Express and heal through creative art-based therapeutic sessions.</p>
+                    </div>
+                </a>
+                <!-- Extra Services End -->
             </div>
         </section>
         <section id="stats" class="section stats-section">
@@ -85,7 +125,7 @@
         </section>
         <section id="contact" class="section contact-section">
             <h2>Book a Session</h2>
-            <form id="contactForm" autocomplete="off">
+            <form id="contactForm" autocomplete="on">
                 <div class="form-row">
                     <input type="text" name="name" id="name" required>
                     <label for="name">Your Name</label>
@@ -94,6 +134,33 @@
                     <input type="email" name="email" id="email" required>
                     <label for="email">Email Address</label>
                 </div>
+                <div class="form-row">
+                    <input type="tel" name="phone" id="phone" pattern="^\+?\d{10,15}$" title="Please enter a valid phone number (10-15 digits)" required>
+                    <label for="phone">Phone Number</label>
+                </div>
+                 <div class="form-row" style="display: flex; gap: 1em;">
+                    <div style="flex:1;">
+                        <select name="service" id="service" required style="width:100%;padding:1.1em 0.7em;border-radius:7px;">
+                            <option value="" disabled selected></option>
+                            <option>Individual Counseling</option>
+                            <option>Family Therapy</option>
+                            <option>Stress Management</option>
+                            <option>Career Guidance</option>
+                            <option>Sleep Therapy</option>
+                            <option>Group Workshops</option>
+                            <option>Online Counseling</option>
+                            <option>Art Therapy</option>
+                        </select>
+                        <label for="service" style="position:absolute;left:14px;top:-13px;font-size:0.89em;color:var(--primary);background:#f1f5f9;padding:0 6px;">Service:</label>
+                    </div>
+                </div>
+                <div class="form-row" style="display: flex; gap: 1em;">
+                    <div style="flex:1;">
+                        <input type="datetime-local" name="datetime" id="datetime" required style="width:100%;padding:1.1em 0.7em;border-radius:7px;"/>
+                        <label for="datetime" style="position:absolute;left:14px;top:-13px;font-size:0.89em;color:var(--primary);background:#f1f5f9;padding:0 6px;">Select Date & Time:</label>
+                    </div>
+                </div>
+            
                 <div class="form-row">
                     <textarea name="message" id="message" rows="4" required></textarea>
                     <label for="message">How can we help you?</label>
@@ -106,6 +173,60 @@
             <p>&copy; 2025 Helfer. All rights reserved.</p>
         </footer>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  function onScrollFadeIn() {
+    document.querySelectorAll('[data-animate="fade-in"]').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 80) {
+        el.classList.add('in-view');
+      }
+    });
+  }
+  window.addEventListener('scroll', onScrollFadeIn, { passive: true });
+  window.addEventListener('resize', onScrollFadeIn);
+  setTimeout(onScrollFadeIn, 120);
+
+  // EmailJS initialization (replace with your own IDs!)
+  emailjs.init('hUIMW1YnrFwaDLkcx'); // <-- Replace with your actual EmailJS user ID
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var formMessage = document.getElementById('formMessage');
+    formMessage.textContent = "Sending...";
+
+    // Client-side validation for phone (basic)
+    var phoneValue = form.phone.value.trim();
+    var phonePattern = /^\+?\d{10,15}$/;
+    if (!phonePattern.test(phoneValue)) {
+        formMessage.textContent = "Please enter a valid phone number (10-15 digits, with optional +).";
+        form.phone.focus();
+        return;
+    }
+
+    // Collect form data
+    var formData = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      service: form.service.value,
+      datetime: form.datetime.value,
+      message: form.message.value
+    };
+
+    // Send email via EmailJS
+   emailjs.send('service_8miyanx', 'template_l6lgtsg', formData) // Replace with your service/template IDs
+      .then(function(response) {
+        formMessage.textContent = "Thank you! Your message has been sent.";
+        form.reset();
+      }, function(error) {
+        formMessage.textContent = "Sorry, there was an error sending your message.";
+      });
+  });
+});
+</script>
 </body>
 </html>

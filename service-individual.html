@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Individual Counseling | Helfer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    .fade-in {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+        animation: fadeInUp 1s cubic-bezier(.45,.05,.55,.95) forwards;
+    }
+    .fade-in.delayed { animation-delay: 0.4s; }
+    .fade-in2 { opacity: 0; animation: fadeIn 1.2s .7s ease forwards;}
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px) scale(0.96);}
+        to   { opacity: 1; transform: translateY(0) scale(1);}
+    }
+    @keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
+    .individual-mini-cards {
+        display: flex;
+        gap: 1.1em;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1.5em 0 1.5em 0;
+    }
+    .individual-mini-card {
+        background: var(--secondary-alt, #e0f2fe);
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(6,182,212,0.09);
+        overflow: hidden;
+        width: 135px;
+        flex-shrink: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform .14s, box-shadow .14s;
+        cursor: pointer;
+        will-change: transform;
+        position: relative;
+    }
+    .individual-mini-card:hover {
+        transform: scale(1.07) rotate(-2deg);
+        box-shadow: 0 6px 22px rgba(6,182,212,0.14);
+        background: var(--white, #fff);
+    }
+    .individual-mini-img {
+        width: 100%;
+        height: 70px;
+        object-fit: cover;
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+        transition: filter .14s;
+    }
+    .individual-mini-card:hover .individual-mini-img {
+        filter: brightness(1.09) saturate(1.18);
+    }
+    .individual-mini-desc {
+        padding: 0.7em 0.7em 0.7em 0.7em;
+        font-size: 0.97em;
+        color: var(--gray, #64748b);
+        text-align: center;
+        min-height: 58px;
+    }
+    @media (max-width: 600px) {
+        .individual-mini-cards { gap: 0.5em; }
+        .individual-mini-card { width: 99vw; }
+        .individual-mini-img { height: 58px; }
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="service-detail-page fade-in">
+            <a href="index.html#services" class="back-link">&larr; Back to Services</a>
+            <h1>Individual Counseling</h1>
+            <div class="desc fade-in delayed">
+                <strong>Personal Growth, One Session at a Time</strong><br>
+                Our Individual Counseling provides you with a confidential, supportive environment to work one-on-one with a certified counselor. Whether you’re dealing with stress, anxiety, depression, or just need guidance, our tailored approach empowers you to achieve your personal goals and emotional wellbeing.
+            </div>
+            
+            <!-- Mini Cards Section (Small animated pics & content) -->
+            <div class="individual-mini-cards">
+                <div class="individual-mini-card fade-in" style="animation-delay:.22s">
+                    <img class="individual-mini-img" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=270&q=80" alt="Personalized Plans">
+                    <div class="individual-mini-desc">
+                        <strong>Personal Plans</strong><br>
+                        Tailored strategies for your growth.
+                    </div>
+                </div>
+                <div class="individual-mini-card fade-in" style="animation-delay:.29s">
+                    <img class="individual-mini-img" src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=270&q=80" alt="Emotional Support">
+                    <div class="individual-mini-desc">
+                        <strong>Emotional Support</strong><br>
+                        A safe space to share & heal.
+                    </div>
+                </div>
+                <div class="individual-mini-card fade-in" style="animation-delay:.36s">
+                    <img class="individual-mini-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=270&q=80" alt="Anxiety Relief">
+                    <div class="individual-mini-desc">
+                        <strong>Anxiety Relief</strong><br>
+                        Techniques to manage stress & worry.
+                    </div>
+                </div>
+                <div class="individual-mini-card fade-in" style="animation-delay:.43s">
+                    <img class="individual-mini-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=270&q=80" alt="Self-Esteem Boost">
+                    <div class="individual-mini-desc">
+                        <strong>Self-Esteem Boost</strong><br>
+                        Build confidence and self-value.
+                    </div>
+                </div>
+                <div class="individual-mini-card fade-in" style="animation-delay:.50s">
+                    <img class="individual-mini-img" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=270&q=80" alt="Flexible Scheduling">
+                    <div class="individual-mini-desc">
+                        <strong>Flexible Scheduling</strong><br>
+                        Appointments that work for you.
+                    </div>
+                </div>
+                <div class="individual-mini-card fade-in" style="animation-delay:.57s">
+                    <img class="individual-mini-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=270&q=80" alt="Evidence Based">
+                    <div class="individual-mini-desc">
+                        <strong>Evidence-Based</strong><br>
+                        Modern, proven therapy techniques.
+                    </div>
+                </div>
+            </div>
+            <ul class="fade-in delayed" style="animation-delay:.7s">
+                <li>Personalized treatment plans</li>
+                <li>Confidential, judgment-free space</li>
+                <li>Anxiety, depression, self-esteem, and more</li>
+                <li>Flexible appointment scheduling</li>
+                <li>Evidence-based therapeutic techniques</li>
+                <li>Goal setting and progress tracking</li>
+                <li>Resilience and coping skill building</li>
+            </ul>
+            <div style="margin:2em 0;" class="fade-in delayed" style="animation-delay:.9s">
+                <blockquote style="font-style:italic;color:var(--primary-dark);border-left:4px solid var(--primary);padding:0.6em 1em;background:#f3f4f6;border-radius:7px;">
+                    “My counselor at Helfer really listened. I finally feel understood and supported.”
+                </blockquote>
+                <div style="text-align:right;font-size:0.97em;color:#888;">— Recent Client</div>
+            </div>
+            <a href="index.html#contact" class="btn-primary fade-in delayed" style="animation-delay:1s">Book Individual Counseling</a>
+        </div>
+    </main>
+    <script>
+    // Animate .fade-in when scrolled into view
+    document.addEventListener('DOMContentLoaded', function () {
+        function onScrollFadeIn() {
+            document.querySelectorAll('.fade-in').forEach(function(el) {
+                if(el.classList.contains('in-view')) return;
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 60) el.classList.add('in-view');
+            });
+        }
+        onScrollFadeIn();
+        window.addEventListener('scroll', onScrollFadeIn, { passive: true });
+        window.addEventListener('resize', onScrollFadeIn);
+    });
+    </script>
+</body>
+</html>

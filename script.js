@@ -49,16 +49,3 @@ document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(e
         }
     });
 });
-
-// Contact form submit
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const msg = document.getElementById("formMessage");
-    msg.style.opacity = 0;
-    setTimeout(() => {
-        msg.textContent = "Thank you for contacting WellMind! We’ll get back to you soon.";
-        msg.style.opacity = 1;
-    }, 250);
-    this.reset();
-    document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(el => el.classList.remove('has-value'));
-});
